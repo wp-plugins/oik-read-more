@@ -3,7 +3,7 @@
 Plugin Name: oik-read-more
 Plugin URI: http://wordpress.org/extend/plugins/oik-read-more
 Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-read-more
-Description: Implements [bw_rm]/[bw_more] shortcode
+Description: Implements [bw_more] shortcode to progressively reveal content
 Version: 0.1  
 Author: bobbingwide
 Author URI: http://www.bobbingwide.com

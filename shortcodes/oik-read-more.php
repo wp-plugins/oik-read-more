@@ -63,10 +63,11 @@ function oik_rm_end( $content ) {
 }
  
 /**
- * Help hook for [bw_more] shortcode
+ * Help hook for [bw_more] shortcode 
+ * "Hide remaining content behind 'read more' button"
  */
 function bw_more__help( $shortcode="bw_more" ) {
-  return( "Hide remaining content behind 'read more' button" );
+  return( "Read more button to progressively reveal content" );
 }
 
 /**
@@ -74,6 +75,7 @@ function bw_more__help( $shortcode="bw_more" ) {
  */
 function bw_more__syntax( $shortcode="bw_more" ) {
   $syntax = array( "read_more" => bw_skv( "read more", "<i>text</i>", "Text for read more button" )
+                 , "class" => bw_skv( null, "<i>CSS class</i>", "CSS class name(s)" )
                  );
   return( $syntax );
 }
