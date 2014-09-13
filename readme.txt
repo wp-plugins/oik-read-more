@@ -1,14 +1,12 @@
 === oik-read-more ===
-Contributors: bobbingwide
+Contributors: bobbingwide, vsgloik
 Donate link: http://www.oik-plugins.com/oik/oik-donate/
 Tags: shortcodes, smart, lazy, [bw_more]
-Requires at least: 3.5
-Tested up to: 3.9
+Requires at least: 3.9
+Tested up to: 4.0
 Stable tag: 0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: oik-read-more
-Domain Path: /languages/
 
 == Description ==
 Implements the [bw_more] shortcode to progressively reveal content by clicking on "read more" buttons.
@@ -52,10 +50,18 @@ Use custom CSS to style the 'read more' text.
 2. result after 'read more' clicked
 
 == Upgrade Notice ==
+= 0.2 =
+Tested up to WordPress 4.0
+
 = 0.1 =
 Tested up to WordPress 3.9 
 
-== Changelog == 
+== Changelog ==
+= 0.2 = 
+* Changed: Does not need to set the plugin server for a plugin hosted on WordPress.org
+* Tested: With WordPress 4.0
+* Fixed: readme.txt file
+ 
 = 0.1 =
 * Added: New plugin implementing the [bw_more] shortcode
 

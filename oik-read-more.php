@@ -1,13 +1,15 @@
 <?php
 /*
 Plugin Name: oik-read-more
-Plugin URI: http://wordpress.org/extend/plugins/oik-read-more
-Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-read-more
+Plugin URI: http://www.oik-plugins.com/oik-plugins/oik-read-progressively-reveal-content/
 Description: Implements [bw_more] shortcode to progressively reveal content
-Version: 0.1  
+Version: 0.2  
 Author: bobbingwide
-Author URI: http://www.bobbingwide.com
+Author URI: http://www.oik-plugins.com/author/bobbingwide
+Text Domain: oik-read-more
+Domain Path: /languages/
 License: GPL2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
     Copyright 2014 Bobbing Wide (email : herb@bobbingwide.com )
 
@@ -28,7 +30,7 @@ License: GPL2
 */
 
 /**
- * Implement "oik_loaded" action for oik-read-more
+ * Implement "oik_add_shortcodes" action for oik-read-more
  */
 function oik_rm_init() {
   // bw_add_shortcode( "bw_rm", "oik_rm", oik_path( "shortcodes/oik-read-more.php", "oik-read-more" ), false );
@@ -36,10 +38,12 @@ function oik_rm_init() {
 }
 
 /**
+ * Implement "oik_admin_menu" for oik-read-more 
+ * 
  * Set the plugin server. Not necessary for a plugin on WordPress.org
  */
 function oik_rm_admin_menu() {
-  oik_register_plugin_server( __FILE__ );
+  // oik_register_plugin_server( __FILE__ );
 }
 
 /**
@@ -50,9 +54,11 @@ function oik_rm_activation() {
   if ( !$plugin_basename ) {
     $plugin_basename = plugin_basename(__FILE__);
     add_action( "after_plugin_row_oik-read-more/oik-read-more.php", "oik_rm_activation" );   
-    require_once( "admin/oik-activation.php" );
+    if ( !function_exists( "oik_plugin_lazy_activation" ) ) { 
+      require_once( "admin/oik-activation.php" );
+    }
   }  
-  $depends = "oik:2.1";
+  $depends = "oik:2.2";
   oik_plugin_lazy_activation( __FILE__, $depends, "oik_plugin_plugin_inactive" );
 }
 
@@ -62,7 +68,7 @@ function oik_rm_activation() {
 function oik_rm_plugin_loaded() {
   add_action( "admin_notices", "oik_rm_activation" );
   add_action( "oik_admin_menu", "oik_rm_admin_menu" );
-  add_action( "oik_loaded", "oik_rm_init" );
+  add_action( "oik_add_shortcodes", "oik_rm_init" );
 }
 
 oik_rm_plugin_loaded();
