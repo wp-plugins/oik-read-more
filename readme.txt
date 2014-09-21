@@ -8,6 +8,8 @@ Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Progressively reveal content by clicking on "read more" buttons.
+
 == Description ==
 Implements the [bw_more] shortcode to progressively reveal content by clicking on "read more" buttons.
 
